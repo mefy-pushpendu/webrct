@@ -1,4 +1,4 @@
-const socket = io('https://webrtc.mefy.care', {transports: ['websocket']});
+const socket = io('http://webrtc.mefy.care:3000', {transports: ['websocket']});
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer({})
 const myVideo = document.createElement('video')
