@@ -33,6 +33,6 @@ const peerServer = ExpressPeerServer(server, {
   path: '/'
 });
 
-app.use('/peerjs/id', peerServer);
+app.use('/peerjs', peerServer);
 
 server.listen(3000)
