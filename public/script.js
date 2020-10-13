@@ -2,7 +2,8 @@ const socket = io('/', {transports: ['polling']});
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined,{
   host:'webrtcpeer.mefy.care',
-  secure:true
+  secure:true,
+  path:'/'
 })
 const myVideo = document.createElement('video')
 myVideo.muted = true
