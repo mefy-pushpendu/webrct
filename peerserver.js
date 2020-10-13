@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 const server = app.listen(9000);
 const peerServer = ExpressPeerServer(server, {
-    path: '/'
+    debug: true
 });
 
 app.use('/peerjs', peerServer);
