@@ -30,7 +30,7 @@ io.on('connection', socket => {
 
 const peerServer = ExpressPeerServer(server, {
   debug: false,
-  path: '/getjs'
+  path: '/'
 });
 
 app.use('/peerjs', peerServer);
