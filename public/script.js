@@ -1,7 +1,7 @@
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
-  host: 'http://webrtc.mefy.care',
+  host: 'webrtc.mefy.care',
   port: '3001'
 })
 const myVideo = document.createElement('video')
