@@ -11,5 +11,5 @@ const peerServer = ExpressPeerServer(server, {
     generateClientId: customGenerationFunction
 });
 
-app.use('/peerjs', peerServer);
+app.use('/', peerServer);
 
