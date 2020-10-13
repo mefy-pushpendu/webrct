@@ -2,8 +2,7 @@ const socket = io('http://localhost:3000/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
   host: 'webrtc.mefy.care',
-  port: '443',
-  path: '/peerjs/myapp'
+  path: '/peerjs/getjs'
 })
 const myVideo = document.createElement('video')
 myVideo.muted = true
