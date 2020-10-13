@@ -29,8 +29,8 @@ io.on('connection', socket => {
 
 
 const peerServer = ExpressPeerServer(server, {
-  debug: false,
-  path: '/'
+  debug: true,
+  path: '/id'
 });
 
 app.use('/peerjs', peerServer);
