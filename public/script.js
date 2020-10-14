@@ -1,7 +1,7 @@
 const socket = io('/', {transports: ['polling']});
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer({
-  host:'webrtcpeer.mefy.care',
+  host:'9000-f6bf939c-3246-478a-be43-e0e8ef07d808.ws-us02.gitpod.io',
   secure:true
 })
 const myVideo = document.createElement('video')
