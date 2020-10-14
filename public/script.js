@@ -1,21 +1,21 @@
-const socket = io('/', {transports: ['polling']});
+const socket = io('/', { transports: ['polling'] });
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer({
-  host:'9000-f6bf939c-3246-478a-be43-e0e8ef07d808.ws-us02.gitpod.io',
-  secure:true
+  host: '9000-f6bf939c-3246-478a-be43-e0e8ef07d808.ws-us02.gitpod.io',
+  secure: true
 })
-const myVideo = document.createElement('video')
+let myVideo = document.createElement('video')
 myVideo.muted = true
-const peers = {}
+let peers = {}
 navigator.mediaDevices.getUserMedia({
   video: true,
   audio: true
 }).then(stream => {
-  addVideoStream(myVideo, stream)
+  addLocalVideo(myVideo, stream)
 
   myPeer.on('call', call => {
     call.answer(stream)
-    const video = document.createElement('video')
+    let video = document.createElement('video')
     call.on('stream', userVideoStream => {
       addVideoStream(video, userVideoStream)
     })
@@ -52,5 +52,18 @@ function addVideoStream(video, stream) {
   video.addEventListener('loadedmetadata', () => {
     video.play()
   })
+  video.setAttribute("height", "650");
+  video.setAttribute("width", "100%");
+  document.getElementById("remoteVideo").appendChild(video);
   videoGrid.append(video)
+}
+
+function addLocalVideo(video, stream) {
+  video.srcObject = stream
+  video.addEventListener('loadedmetadata', () => {
+    video.play()
+  })
+  video.setAttribute("height", "180");
+  video.setAttribute("width", "120");
+  document.getElementById("localVideo").appendChild(video);
 }
