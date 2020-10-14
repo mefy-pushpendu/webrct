@@ -55,7 +55,6 @@ function addVideoStream(video, stream) {
   video.setAttribute("height", "650");
   video.setAttribute("width", "100%");
   document.getElementById("remoteVideo").appendChild(video);
-  videoGrid.append(video)
 }
 
 function addLocalVideo(video, stream) {
