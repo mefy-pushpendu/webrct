@@ -5,7 +5,7 @@ const myPeer = new Peer({
   secure:true
 })
 const myVideo = document.createElement('video')
-myVideo.muted = true
+myVideo.muted = false
 const peers = {}
 navigator.mediaDevices.getUserMedia({
   video: true,
