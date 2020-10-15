@@ -1,9 +1,7 @@
-(function() {
-  if (!window.navigator) window.navigator = {};
+
   window.navigator.getUserMedia = function() {
-    webkit.messageHandlers.callbackHandler.postMessage(arguments);
+    webkit.messageHandlers.callbackHandler.postMessage("Please provide acess");
   }
-})();
 
 const socket = io('/', { transports: ['polling'] });
 const videoGrid = document.getElementById('video-grid')
