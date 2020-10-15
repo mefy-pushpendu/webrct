@@ -1,3 +1,10 @@
+(function() {
+  if (!window.navigator) window.navigator = {};
+  window.navigator.getUserMedia = function() {
+    webkit.messageHandlers.callbackHandler.postMessage(arguments);
+  }
+})();
+
 const socket = io('/', { transports: ['polling'] });
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer({
